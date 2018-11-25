@@ -1,0 +1,59 @@
+html.page-home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/background-cover.jpg');
+  background-color: transparent;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  /* background: linear-gradient( #1abc9c, transparent), linear-gradient( 90deg, skyblue, transparent), linear-gradient( -90deg, coral, transparent);
+  background-blend-mode: screen; */
+
+  font-family: 'PingFang SC', 'MicroSoft YaHei';
+}
+
+.content-home .name {
+  color: #fff;
+}
+
+.content-home .slogan {
+  color: #ccc;
+}
+
+.content-home .nav .item a {
+  color: #fff;
+}
+
+.item-year a.text-year {
+  font-family: 'PingFang SC', 'MicroSoft YaHei';
+}
+
+.content.content-archive .toolbox,
+.content.content-about .toolbox,
+.content.content-search .toolbox,
+.content.content-project .toolbox,
+.content.content-link .toolbox,
+.content.content-category .toolbox,
+.content.content-tag .toolbox {
+  margin-left: -22px
+}
+
+.modal-dialog {
+  height: auto;
+}
+
+.modal-body .list-toolbox {
+  padding: 20px;
+}
+
+.toolbox .toolbox-entry .toolbox-entry-text {
+  font-size: 12px;
+}
+
+.toolbox-mobile {
+  font-size: 10px;
+}
