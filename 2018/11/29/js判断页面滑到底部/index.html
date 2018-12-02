@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://blog.guobaoyoo.com">
   <title>js判断页面滑到底部 | Undefined</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="js判断页面滑到底部算是比较简单的一个功能，记录一下涉及到的知识点 实现想法功能涉及到三个长度，分别是  屏幕的高度或者说是窗口高度，用变量CH代替 浏览器所有内容高度，用变量DH代替 文档发生滚动式，被卷去的高度，用变量SH代替">
+  <meta name="description" content="js判断页面滑到底部算是比较简单的一个功能，记录一下涉及到的知识点 实现想法功能涉及到三个长度，分别是  屏幕的高度或者说是窗口高度，用变量CH代替 浏览器所有内容高度，用变量DH代替 文档发生滚动时，被卷去的高度，用变量SH代替">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js判断页面滑到底部">
 <meta property="og:url" content="https://blog.guobaoyoo.com/2018/11/29/js判断页面滑到底部/index.html">
 <meta property="og:site_name" content="Undefined">
-<meta property="og:description" content="js判断页面滑到底部算是比较简单的一个功能，记录一下涉及到的知识点 实现想法功能涉及到三个长度，分别是  屏幕的高度或者说是窗口高度，用变量CH代替 浏览器所有内容高度，用变量DH代替 文档发生滚动式，被卷去的高度，用变量SH代替">
+<meta property="og:description" content="js判断页面滑到底部算是比较简单的一个功能，记录一下涉及到的知识点 实现想法功能涉及到三个长度，分别是  屏幕的高度或者说是窗口高度，用变量CH代替 浏览器所有内容高度，用变量DH代替 文档发生滚动时，被卷去的高度，用变量SH代替">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://static.guobaoyoo.com/img/blog/scroll.png">
-<meta property="og:updated_time" content="2018-11-29T07:18:06.000Z">
+<meta property="og:updated_time" content="2018-12-02T06:30:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js判断页面滑到底部">
-<meta name="twitter:description" content="js判断页面滑到底部算是比较简单的一个功能，记录一下涉及到的知识点 实现想法功能涉及到三个长度，分别是  屏幕的高度或者说是窗口高度，用变量CH代替 浏览器所有内容高度，用变量DH代替 文档发生滚动式，被卷去的高度，用变量SH代替">
+<meta name="twitter:description" content="js判断页面滑到底部算是比较简单的一个功能，记录一下涉及到的知识点 实现想法功能涉及到三个长度，分别是  屏幕的高度或者说是窗口高度，用变量CH代替 浏览器所有内容高度，用变量DH代替 文档发生滚动时，被卷去的高度，用变量SH代替">
 <meta name="twitter:image" content="http://static.guobaoyoo.com/img/blog/scroll.png">
   
     <link rel="alternative" href="/atom.xml" title="Undefined" type="application/atom+xml">
@@ -174,7 +174,7 @@
 <ul>
 <li>屏幕的高度或者说是窗口高度，用变量<code>CH</code>代替</li>
 <li>浏览器所有内容高度，用变量<code>DH</code>代替</li>
-<li>文档发生滚动式，被卷去的高度，用变量<code>SH</code>代替</li>
+<li>文档发生滚动时，被卷去的高度，用变量<code>SH</code>代替</li>
 </ul>
 <a id="more"></a>
 <p><img src="http://static.guobaoyoo.com/img/blog/scroll.png" alt="image"><br>怎么算页面滑到底部呢？<br>就是 屏幕或者窗口的高度 加上文档被卷去的高度 等于 浏览器所有内容高度<br>即 <code>CH + SH === DH</code><br>那么就好说了只要获取这三个值做个if判断就可以了</p>
