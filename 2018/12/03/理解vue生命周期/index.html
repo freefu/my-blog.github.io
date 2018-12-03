@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://blog.guobaoyoo.com">
-  <title>Tag: markdown | Undefined</title>
+  <title>理解vue生命周期 | Undefined</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="my blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Undefined">
-<meta property="og:url" content="https://blog.guobaoyoo.com/tags/markdown/index.html">
+  <meta name="description" content="生命周期图就不放了，官网都有的，链接地址：vue生命周期图大概分为几个步骤，其实看英文都能看的出来，都是对应的，一个before*，一个*ed，理解英文对应的意思能更好的理解生命周期的含义  beforeCreate : 创建之前，刚刚new Vue()之后，数据还没有挂载呢，只有一个空壳 created : 创建完成之后，这时候能使用并更改数据了，在这里更改数据不会触发 updated 函数 b">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="理解vue生命周期">
+<meta property="og:url" content="https://blog.guobaoyoo.com/2018/12/03/理解vue生命周期/index.html">
 <meta property="og:site_name" content="Undefined">
-<meta property="og:description" content="my blog">
+<meta property="og:description" content="生命周期图就不放了，官网都有的，链接地址：vue生命周期图大概分为几个步骤，其实看英文都能看的出来，都是对应的，一个before*，一个*ed，理解英文对应的意思能更好的理解生命周期的含义  beforeCreate : 创建之前，刚刚new Vue()之后，数据还没有挂载呢，只有一个空壳 created : 创建完成之后，这时候能使用并更改数据了，在这里更改数据不会触发 updated 函数 b">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-03T06:28:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Undefined">
-<meta name="twitter:description" content="my blog">
+<meta name="twitter:title" content="理解vue生命周期">
+<meta name="twitter:description" content="生命周期图就不放了，官网都有的，链接地址：vue生命周期图大概分为几个步骤，其实看英文都能看的出来，都是对应的，一个before*，一个*ed，理解英文对应的意思能更好的理解生命周期的含义  beforeCreate : 创建之前，刚刚new Vue()之后，数据还没有挂载呢，只有一个空壳 created : 创建完成之后，这时候能使用并更改数据了，在这里更改数据不会触发 updated 函数 b">
   
     <link rel="alternative" href="/atom.xml" title="Undefined" type="application/atom+xml">
   
@@ -145,60 +147,189 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-理解vue生命周期" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/25/markdown/" class="archive-article-date">
-  	<time datetime="2018-11-25T03:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/25/markdown/">My first blog</a>
+    <h1 class="article-title" itemprop="name">
+      理解vue生命周期
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/12/03/理解vue生命周期/" class="archive-article-date">
+  	<time datetime="2018-12-03T06:14:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>生命周期图就不放了，官网都有的，链接地址：<a href="https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram" target="_blank" rel="noopener">vue生命周期图</a><br>大概分为几个步骤，其实看英文都能看的出来，都是对应的，一个<code>before*</code>，一个<code>*ed</code>，<u>理解英文对应的意思能更好的理解生命周期的含义</u></p>
+<ul>
+<li><strong>beforeCreate</strong> : <strong>创建之前</strong>，刚刚new Vue()之后，数据还没有挂载呢，只有一个空壳</li>
+<li><strong>created</strong> : <strong>创建完成之后</strong>，这时候能使用并更改数据了，在这里更改数据不会触发 updated 函数</li>
+<li><strong>beforeMount</strong> : <strong>安装之前</strong>，虚拟dom已经完成，马上就要渲染，这是最后一次能修改数据了，不会触发 update 函数</li>
+<li><strong>mounted</strong> : <strong>安装完成之后</strong>，这时候真实dom已经渲染完事了，事件也已经挂载好了，可以进行一些真实的dom操作</li>
+<li><strong>beforeUpdate</strong> : <strong>更新（重新渲染）之前</strong>，重新渲染之前触发，然后重新构建虚拟dom跟之前的虚拟dom进行 diff 算法比较后重新渲染</li>
+<li><strong>updated</strong> : <strong>更新完成（重新渲染完成）之后</strong>，数据已经更改完成，dom也已经重新渲染完成</li>
+<li><strong>beforeDestroy</strong> : <strong>销毁之前</strong></li>
+<li><strong>destroy**</strong> : <strong>销毁之后</strong></li>
+</ul>
+<a id="more"></a>
+<p>具体的表现还有理解看代码吧。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>vue lifeCycle<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"</span> <span class="attr">integrity</span>=<span class="string">"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myApp"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">my-temp</span>&gt;</span><span class="tag">&lt;/<span class="name">my-temp</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">"myTemp"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"myP"</span>&gt;</span>my-temp 组件<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"myData"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>myData: &#123;&#123; myData &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-success"</span> @<span class="attr">click</span>=<span class="string">"changeData"</span>&gt;</span>changeData<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-warning"</span> @<span class="attr">click</span>=<span class="string">"destroyEvent"</span>&gt;</span>destroy<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    Vue.component(<span class="string">'myTemp'</span>, &#123;</span></span><br><span class="line"><span class="javascript">      template: <span class="string">'#myTemp'</span>,</span></span><br><span class="line"><span class="javascript">      data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">          myData: <span class="string">'hello world -- init'</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      &#125;,</span></span><br><span class="line"><span class="undefined">      methods: &#123;</span></span><br><span class="line"><span class="undefined">        changeData () &#123;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">this</span>.myData = <span class="string">'hello world -- changed'</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        destroyEvent () &#123;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">this</span>.$destroy()</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      &#125;,</span></span><br><span class="line"><span class="undefined">      beforeCreate () &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'beforeCreate: 刚刚new Vue()之后，数据还没有挂载呢，只有一个空壳'</span>)</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.myData)</span></span><br><span class="line"><span class="javascript">        <span class="comment">// undefined</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="built_in">document</span>.getElementById(<span class="string">'myP'</span>))</span></span><br><span class="line"><span class="javascript">        <span class="comment">// null</span></span></span><br><span class="line"><span class="undefined">      &#125;,</span></span><br><span class="line"><span class="undefined">      created () &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'created: 这时候能使用并更改数据了，在这里更改数据不会触发 updated 函数'</span>)</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.myData = <span class="string">'hello world -- created'</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.myData)</span></span><br><span class="line"><span class="javascript">        <span class="comment">// hello world -- created</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'在这里可以在渲染前倒数第二次更改数据的机会，不会触发其他的钩子函数，一般可以在这里做初始数据的获取'</span>)</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'接下来开始找实例或者组件对应的模板，编译模板为虚拟dom放入到render函数中准备渲染'</span>)</span></span><br><span class="line"><span class="undefined">      &#125;,</span></span><br><span class="line"><span class="undefined">      beforeMount () &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'beforeMount: 虚拟dom已经完成，马上就要渲染，这是最后一次能修改数据了，不会触发 update 函数'</span>)</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.myData = <span class="string">'hello world -- beforeMount'</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.myData)</span></span><br><span class="line"><span class="javascript">        <span class="comment">// hello world -- beforeMount</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="built_in">document</span>.getElementById(<span class="string">'myP'</span>))</span></span><br><span class="line"><span class="javascript">        <span class="comment">// null</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'接下来开始render，渲染真实dom'</span>)</span></span><br><span class="line"><span class="undefined">      &#125;,</span></span><br><span class="line"><span class="undefined">      mounted () &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'mounted: 这时候真实dom已经渲染完事了，事件也已经挂载好了，可以进行一些真实的dom操作'</span>)</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="built_in">document</span>.getElementById(<span class="string">'myP'</span>))</span></span><br><span class="line"><span class="xml">        // <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"myP"</span>&gt;</span>A组件<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'当数据改变，进入到 beforeMount ，当调用销毁，进入到 beforeDestory'</span>)</span></span><br><span class="line"><span class="undefined">      &#125;,</span></span><br><span class="line"><span class="undefined">      beforeUpdate () &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'beforeUpdate: 重新渲染之前触发，然后重新构建虚拟dom跟之前的虚拟dom进行 diff 算法比较后重新渲染'</span>)</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'!!!! 不能在此处更改数据，会陷入死循环'</span>)</span></span><br><span class="line"><span class="undefined">      &#125;,</span></span><br><span class="line"><span class="undefined">      updated () &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'updated: 数据已经更改完成，dom也已经重新渲染完成'</span>)</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'!!!! 不能在此处更改数据，会陷入死循环'</span>)</span></span><br><span class="line"><span class="undefined">      &#125;,</span></span><br><span class="line"><span class="undefined">      beforeDestroy () &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'beforeDestroy: 销毁前执行'</span>)</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'拆除监听，子组件，事件绑定'</span>)</span></span><br><span class="line"><span class="undefined">      &#125;,</span></span><br><span class="line"><span class="undefined">      destroyed () &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'destroyed: 销毁之后触发'</span>)</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">new</span> Vue(&#123;&#125;).$mount(<span class="string">'#myApp'</span>)</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/zfb.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">markdown</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://blog.guobaoyoo.com/2018/12/03/理解vue生命周期/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/12/01/慢慢喜欢你到忘记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">慢慢喜欢你到忘记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -221,9 +352,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

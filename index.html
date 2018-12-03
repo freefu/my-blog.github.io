@@ -147,6 +147,92 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-理解vue生命周期" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/03/理解vue生命周期/">理解vue生命周期</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/03/理解vue生命周期/" class="archive-article-date">
+  	<time datetime="2018-12-03T06:14:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>生命周期图就不放了，官网都有的，链接地址：<a href="https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram" target="_blank" rel="noopener">vue生命周期图</a><br>大概分为几个步骤，其实看英文都能看的出来，都是对应的，一个<code>before*</code>，一个<code>*ed</code>，<u>理解英文对应的意思能更好的理解生命周期的含义</u></p>
+<ul>
+<li><strong>beforeCreate</strong> : <strong>创建之前</strong>，刚刚new Vue()之后，数据还没有挂载呢，只有一个空壳</li>
+<li><strong>created</strong> : <strong>创建完成之后</strong>，这时候能使用并更改数据了，在这里更改数据不会触发 updated 函数</li>
+<li><strong>beforeMount</strong> : <strong>安装之前</strong>，虚拟dom已经完成，马上就要渲染，这是最后一次能修改数据了，不会触发 update 函数</li>
+<li><strong>mounted</strong> : <strong>安装完成之后</strong>，这时候真实dom已经渲染完事了，事件也已经挂载好了，可以进行一些真实的dom操作</li>
+<li><strong>beforeUpdate</strong> : <strong>更新（重新渲染）之前</strong>，重新渲染之前触发，然后重新构建虚拟dom跟之前的虚拟dom进行 diff 算法比较后重新渲染</li>
+<li><strong>updated</strong> : <strong>更新完成（重新渲染完成）之后</strong>，数据已经更改完成，dom也已经重新渲染完成</li>
+<li><strong>beforeDestroy</strong> : <strong>销毁之前</strong></li>
+<li><strong>destroy**</strong> : <strong>销毁之后</strong></li>
+</ul>
+        
+          <a class="article-more-a" href="/2018/12/03/理解vue生命周期/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/03/理解vue生命周期/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-慢慢喜欢你到忘记" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -628,6 +714,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
