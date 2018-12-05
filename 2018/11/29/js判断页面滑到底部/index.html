@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="Undefined">
 <meta property="og:description" content="js判断页面滑到底部算是比较简单的一个功能，记录一下涉及到的知识点 实现想法功能涉及到三个长度，分别是  屏幕的高度或者说是窗口高度，用变量CH代替 浏览器所有内容高度，用变量DH代替 文档发生滚动时，被卷去的高度，用变量SH代替">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://static.guobaoyoo.com/img/blog/scroll.png">
-<meta property="og:updated_time" content="2018-12-02T06:30:05.000Z">
+<meta property="og:image" content="http://static.guobaoyoo.com/img/blog/scroll.png?imageView2/0/q/75|watermark/2/text/YmxvZy5ndW9iYW95b28uY29t/font/5b6u6L2v6ZuF6buR/fontsize/400/fill/I0NDQ0NDQw==/dissolve/50/gravity/SouthEast/dx/10/dy/10">
+<meta property="og:updated_time" content="2018-12-05T01:34:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js判断页面滑到底部">
 <meta name="twitter:description" content="js判断页面滑到底部算是比较简单的一个功能，记录一下涉及到的知识点 实现想法功能涉及到三个长度，分别是  屏幕的高度或者说是窗口高度，用变量CH代替 浏览器所有内容高度，用变量DH代替 文档发生滚动时，被卷去的高度，用变量SH代替">
-<meta name="twitter:image" content="http://static.guobaoyoo.com/img/blog/scroll.png">
+<meta name="twitter:image" content="http://static.guobaoyoo.com/img/blog/scroll.png?imageView2/0/q/75|watermark/2/text/YmxvZy5ndW9iYW95b28uY29t/font/5b6u6L2v6ZuF6buR/fontsize/400/fill/I0NDQ0NDQw==/dissolve/50/gravity/SouthEast/dx/10/dy/10">
   
     <link rel="alternative" href="/atom.xml" title="Undefined" type="application/atom+xml">
   
@@ -177,7 +177,7 @@
 <li>文档发生滚动时，被卷去的高度，用变量<code>SH</code>代替</li>
 </ul>
 <a id="more"></a>
-<p><img src="http://static.guobaoyoo.com/img/blog/scroll.png" alt="image"><br>怎么算页面滑到底部呢？<br>就是 屏幕或者窗口的高度 加上文档被卷去的高度 等于 浏览器所有内容高度<br>即 <code>CH + SH === DH</code><br>那么就好说了只要获取这三个值做个if判断就可以了</p>
+<p><img src="http://static.guobaoyoo.com/img/blog/scroll.png?imageView2/0/q/75|watermark/2/text/YmxvZy5ndW9iYW95b28uY29t/font/5b6u6L2v6ZuF6buR/fontsize/400/fill/I0NDQ0NDQw==/dissolve/50/gravity/SouthEast/dx/10/dy/10" alt="image"><br>怎么算页面滑到底部呢？<br>就是 屏幕或者窗口的高度 加上文档被卷去的高度 等于 浏览器所有内容高度<br>即 <code>CH + SH === DH</code><br>那么就好说了只要获取这三个值做个if判断就可以了</p>
 <h3 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h3><p>在不同浏览器和不同规定DTD的情况下获取这三个高度是不同的，所以为了兼容写法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">scrollBottom () &#123;</span><br><span class="line">  <span class="keyword">let</span> SH = <span class="built_in">document</span>.body.scrollTop || <span class="built_in">document</span>.documentElement.scrollTop</span><br><span class="line">  <span class="keyword">let</span> CH = <span class="built_in">document</span>.documentElement.clientHeight || <span class="built_in">document</span>.body.clientHeight</span><br><span class="line">  <span class="keyword">let</span> DH = <span class="built_in">document</span>.documentElement.scrollHeight || <span class="built_in">document</span>.body.scrollHeight</span><br><span class="line">  <span class="keyword">return</span> (SH + CH) === DH</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
