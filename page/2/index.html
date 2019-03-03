@@ -147,6 +147,406 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-有关CSRF攻击" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/04/有关CSRF攻击/">有关 CSRF</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/04/有关CSRF攻击/" class="archive-article-date">
+  	<time datetime="2018-12-04T10:15:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>记录一下<code>CSRF</code>的攻击方式和防御</p>
+<h5 id="CSRF-全称"><a href="#CSRF-全称" class="headerlink" title="CSRF 全称"></a>CSRF 全称</h5><p>CSRF:<br>Cross-site request forgery<br>跨站请求伪造</p>
+        
+          <a class="article-more-a" href="/2018/12/04/有关CSRF攻击/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/04/有关CSRF攻击/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-理解vue生命周期" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/03/理解vue生命周期/">理解vue生命周期</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/03/理解vue生命周期/" class="archive-article-date">
+  	<time datetime="2018-12-03T06:14:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>生命周期图就不放了，官网都有的，链接地址：<a href="https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram" target="_blank" rel="noopener">vue生命周期图</a><br>大概分为几个步骤，其实看英文都能看的出来，都是对应的，一个<code>before*</code>，一个<code>*ed</code>，<u>理解英文对应的意思能更好的理解生命周期的含义</u></p>
+<ul>
+<li><strong>beforeCreate</strong> : <strong>创建之前</strong>，刚刚new Vue()之后，数据还没有挂载呢，只有一个空壳</li>
+<li><strong>created</strong> : <strong>创建完成之后</strong>，这时候能使用并更改数据了，在这里更改数据不会触发 updated 函数</li>
+<li><strong>beforeMount</strong> : <strong>安装之前</strong>，虚拟dom已经完成，马上就要渲染，这是最后一次能修改数据了，不会触发 update 函数</li>
+<li><strong>mounted</strong> : <strong>安装完成之后</strong>，这时候真实dom已经渲染完事了，事件也已经挂载好了，可以进行一些真实的dom操作</li>
+<li><strong>beforeUpdate</strong> : <strong>更新（重新渲染）之前</strong>，重新渲染之前触发，然后重新构建虚拟dom跟之前的虚拟dom进行 diff 算法比较后重新渲染</li>
+<li><strong>updated</strong> : <strong>更新完成（重新渲染完成）之后</strong>，数据已经更改完成，dom也已经重新渲染完成</li>
+<li><strong>beforeDestroy</strong> : <strong>销毁之前</strong></li>
+<li><strong>destroy</strong> : <strong>销毁之后</strong></li>
+</ul>
+        
+          <a class="article-more-a" href="/2018/12/03/理解vue生命周期/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/03/理解vue生命周期/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-慢慢喜欢你到忘记" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/01/慢慢喜欢你到忘记/">慢慢喜欢你到忘记</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/01/慢慢喜欢你到忘记/" class="archive-article-date">
+  	<time datetime="2018-12-01T15:19:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>“你还喜欢她对吧？”<br>“喜欢有什么用呢？”<br>“我连她今天开心还是难过都不知道。”</p>
+</blockquote>
+<audio style="margin: 20px auto; display: block;" src="http://static.guobaoyoo.com/audio/blog/manman.mp3" controls="controls"><br>  Your browser does not support the audio tag.<br></audio>
+        
+          <a class="article-more-a" href="/2018/12/01/慢慢喜欢你到忘记/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">mood</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/01/慢慢喜欢你到忘记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js判断页面滑到底部" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/29/js判断页面滑到底部/">js判断页面滑到底部</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/29/js判断页面滑到底部/" class="archive-article-date">
+  	<time datetime="2018-11-29T04:28:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>js判断页面滑到底部算是比较简单的一个功能，记录一下涉及到的知识点</p>
+<h3 id="实现想法"><a href="#实现想法" class="headerlink" title="实现想法"></a>实现想法</h3><p>功能涉及到三个长度，分别是</p>
+<ul>
+<li>屏幕的高度或者说是窗口高度，用变量<code>CH</code>代替</li>
+<li>浏览器所有内容高度，用变量<code>DH</code>代替</li>
+<li>文档发生滚动时，被卷去的高度，用变量<code>SH</code>代替</li>
+</ul>
+        
+          <a class="article-more-a" href="/2018/11/29/js判断页面滑到底部/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/29/js判断页面滑到底部/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-linux环境安装nodejs" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/28/linux环境安装nodejs/">linux环境安装nodejs</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/28/linux环境安装nodejs/" class="archive-article-date">
+  	<time datetime="2018-11-28T07:08:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="下载nodejs安装包并上传"><a href="#下载nodejs安装包并上传" class="headerlink" title="下载nodejs安装包并上传"></a>下载nodejs安装包并上传</h3><p>再官网选择正确的安装包下载<br><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a><br>比如下载的包为 node-v10.14.0-linux-x64.tar.xz<br>然后用scp命令上传到服务器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp ./node-v10.14.0-linux-x64.tar.xz root@xx.xx.xxx.xx:/app/software</span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/11/28/linux环境安装nodejs/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/28/linux环境安装nodejs/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-audio" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -390,6 +790,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">VSCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
@@ -398,15 +802,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">mood</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">mood</a>
               </li>
              
               <li class="article-tag-list-item">
