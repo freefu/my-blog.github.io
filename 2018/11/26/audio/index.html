@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Undefined">
 <meta property="og:description" content="前言之前有做过一些跟audio相关的工作，大多数是h5页面中引入bgm，音效，在这里总结一下之前遇见的问题和解决的办法以及一些优化用户体验的实践。 audio标签以前的项目中使用方法1&amp;lt;audio src=&quot;http://static.guobaoyoo.com/mp3/naonao/bgm.mp3&quot; autoplay=&quot;autoplay&quot; controls=&quot;controls&quot; loop=">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-27T07:07:39.000Z">
+<meta property="og:updated_time" content="2019-04-03T05:35:06.517Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有关audio的一些事">
 <meta name="twitter:description" content="前言之前有做过一些跟audio相关的工作，大多数是h5页面中引入bgm，音效，在这里总结一下之前遇见的问题和解决的办法以及一些优化用户体验的实践。 audio标签以前的项目中使用方法1&amp;lt;audio src=&quot;http://static.guobaoyoo.com/mp3/naonao/bgm.mp3&quot; autoplay=&quot;autoplay&quot; controls=&quot;controls&quot; loop=">
@@ -185,6 +185,7 @@
 <li>放到手机中还是不能自动播放</li>
 <li>不能暂停</li>
 </ul>
+<h3 id="追加"><a href="#追加" class="headerlink" title="追加"></a>追加</h3><p>移动端微信中播放视频<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> video = <span class="built_in">document</span>.getElementById(<span class="string">'video'</span>)</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.WeixinJSBridge) &#123;</span><br><span class="line">  <span class="built_in">window</span>.WeixinJSBridge.invoke(<span class="string">'getNetworkType'</span>, &#123;&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    video.play()</span><br><span class="line">  &#125;, <span class="literal">false</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">document</span>.addEventListener(<span class="string">'WeixinJSBridgeReady'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.WeixinJSBridge.invoke(<span class="string">'getNetworkType'</span>, &#123;&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">      video.play()</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;, <span class="literal">false</span>)</span><br><span class="line">&#125;</span><br><span class="line">video.play()</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -428,11 +429,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">VSCode</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color2">VSCode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -444,11 +445,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">mood</a>
+                <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">心情</a>
+                <a href="javascript:void(0)" class="js-tag color5">mood</a>
               </li>
              
               <li class="article-tag-list-item">

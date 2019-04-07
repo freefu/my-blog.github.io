@@ -6,23 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://blog.guobaoyoo.com">
-  <title>理解原型链 | Undefined</title>
+  <title>window.history | Undefined</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一段时间之后发现自己又忘了这个概念，估计是理解的不透彻，今天画下图，再记忆一下">
+  <meta name="description" content="在工作中遇见一种需求，在用户点击回退按钮时为了挽留用户，会监听这个返回事件从而进行一些操作，就会用到history对象的pushState方法，在这里记录一下 window.history对象 Window.history是一个只读属性，用来获取History 对象的引用，History 对象提供了操作浏览器会话历史（浏览器地址栏中访问的页面，以及当前页面中通过框架加载的页面）的接口">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="理解原型链">
-<meta property="og:url" content="https://blog.guobaoyoo.com/2018/12/17/理解原型链/index.html">
+<meta property="og:title" content="window.history">
+<meta property="og:url" content="https://blog.guobaoyoo.com/2019/04/07/history/index.html">
 <meta property="og:site_name" content="Undefined">
-<meta property="og:description" content="一段时间之后发现自己又忘了这个概念，估计是理解的不透彻，今天画下图，再记忆一下">
+<meta property="og:description" content="在工作中遇见一种需求，在用户点击回退按钮时为了挽留用户，会监听这个返回事件从而进行一些操作，就会用到history对象的pushState方法，在这里记录一下 window.history对象 Window.history是一个只读属性，用来获取History 对象的引用，History 对象提供了操作浏览器会话历史（浏览器地址栏中访问的页面，以及当前页面中通过框架加载的页面）的接口">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://static.guobaoyoo.com/img/blog/prototype.png">
-<meta property="og:image" content="http://static.guobaoyoo.com/img/blog/proto-p1.png">
-<meta property="og:updated_time" content="2018-12-17T10:09:38.000Z">
+<meta property="og:updated_time" content="2019-04-07T04:31:48.628Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="理解原型链">
-<meta name="twitter:description" content="一段时间之后发现自己又忘了这个概念，估计是理解的不透彻，今天画下图，再记忆一下">
-<meta name="twitter:image" content="http://static.guobaoyoo.com/img/blog/prototype.png">
+<meta name="twitter:title" content="window.history">
+<meta name="twitter:description" content="在工作中遇见一种需求，在用户点击回退按钮时为了挽留用户，会监听这个返回事件从而进行一些操作，就会用到history对象的pushState方法，在这里记录一下 window.history对象 Window.history是一个只读属性，用来获取History 对象的引用，History 对象提供了操作浏览器会话历史（浏览器地址栏中访问的页面，以及当前页面中通过框架加载的页面）的接口">
   
     <link rel="alternative" href="/atom.xml" title="Undefined" type="application/atom+xml">
   
@@ -150,35 +147,38 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-理解原型链" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-history" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      理解原型链
+      window.history
     </h1>
   
 
         
-        <a href="/2018/12/17/理解原型链/" class="archive-article-date">
-  	<time datetime="2018-12-17T09:38:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-17</time>
+        <a href="/2019/04/07/history/" class="archive-article-date">
+  	<time datetime="2019-04-07T04:04:35.324Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一段时间之后发现自己又忘了这个概念，估计是理解的不透彻，今天画下图，再记忆一下</p>
+        <p>在工作中遇见一种需求，在用户点击回退按钮时为了挽留用户，会监听这个返回事件从而进行一些操作，就会用到history对象的pushState方法，在这里记录一下</p>
+<h3 id="window-history对象"><a href="#window-history对象" class="headerlink" title="window.history对象"></a>window.history对象</h3><blockquote>
+<p>Window.history是一个只读属性，用来获取History 对象的引用，History 对象提供了操作浏览器会话历史（浏览器地址栏中访问的页面，以及当前页面中通过框架加载的页面）的接口</p>
+</blockquote>
 <a id="more"></a>
-<p><img src="http://static.guobaoyoo.com/img/blog/prototype.png" alt="image"></p>
-<p>上代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> Person = <span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> Person(<span class="string">'freefu'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(p1)</span><br><span class="line"><span class="keyword">let</span> p2 = <span class="keyword">new</span> Person(<span class="string">'liulian'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(p2)</span><br><span class="line"><span class="comment">// Person &#123;name: "freefu"&#125;</span></span><br><span class="line"><span class="comment">// Person &#123;name: "liulian"&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 要给p1 p2或者更多的实例增加一个say方法</span></span><br><span class="line">p1.__proto__.say = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'I can say'</span>)</span><br><span class="line">&#125;</span><br><span class="line">p1.say()</span><br><span class="line"><span class="comment">// say hi</span></span><br><span class="line">p2.say()</span><br><span class="line"><span class="comment">// say hi</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 要给p1 p2或者更多的实例增加一个walk方法</span></span><br><span class="line">Person.prototype.walk = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'I can walk'</span>)</span><br><span class="line">&#125;</span><br><span class="line">p1.walk()</span><br><span class="line"><span class="comment">// I can walk</span></span><br><span class="line">p2.walk()</span><br><span class="line"><span class="comment">// I can walk</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 要给p1 p2或者更多的实例增加一个eat方法</span></span><br><span class="line"><span class="comment">// 应该不会有人直接这样写</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.eat = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'I can eat'</span>)</span><br><span class="line">&#125;</span><br><span class="line">p1.eat()</span><br><span class="line"><span class="comment">// I can eat</span></span><br><span class="line">p2.eat()</span><br><span class="line"><span class="comment">// I can eat</span></span><br></pre></td></tr></table></figure>
-<p>输出p1</p>
-<p><img src="http://static.guobaoyoo.com/img/blog/proto-p1.png" alt="image"></p>
-<p>可以看到一开始p1的say方法，walk方法，eat方法都在哪里，是怎么样一层一层网上找的。</p>
-
+<p>在chrome控制台输入history回车可见，history有 ‘length’, ‘scrollRestoration’, ‘state’三个属性，展开 <strong>proto</strong> 发现有 back, forward, go, pushState, replaceState 等方法</p>
+<h3 id="pushState-和-replaceState"><a href="#pushState-和-replaceState" class="headerlink" title="pushState 和 replaceState"></a>pushState 和 replaceState</h3><p>添加和修改历史记录中的条目<br>语法 history.pushState(state, title, url)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> stateObj = &#123;</span><br><span class="line">  foo: <span class="string">'bar'</span></span><br><span class="line">&#125;</span><br><span class="line">history.pushState(stateObj, <span class="string">'page 1'</span>, <span class="string">'#'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>history.replaceState() 的使用与 history.pushState() 非常相似，区别在于  replaceState()  是修改了当前的历史记录项而不是新建一个。 注意这并不会阻止其在全局浏览器历史记录中创建一个新的历史记录项。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> stateObj = &#123;</span><br><span class="line">    foo: <span class="string">"bar"</span></span><br><span class="line">&#125;</span><br><span class="line">history.replaceState(stateObj, <span class="string">"page 2"</span>, <span class="string">"bar.html"</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="popstate事件"><a href="#popstate事件" class="headerlink" title="popstate事件"></a>popstate事件</h3><blockquote>
+<p>每当活动的历史记录项发生变化时， popstate 事件都会被传递给window对象。如果当前活动的历史记录项是被 pushState 创建的，或者是由 replaceState 改变的，那么 popstate 事件的状态属性 state 会包含一个当前历史记录状态对象的拷贝。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'popstate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'back btn click'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="用户点击回退按钮对之进行”挽留”"><a href="#用户点击回退按钮对之进行”挽留”" class="headerlink" title="用户点击回退按钮对之进行”挽留”"></a>用户点击回退按钮对之进行”挽留”</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hisPush</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> params = &#123;</span><br><span class="line">    key: <span class="built_in">Date</span>.now()</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">window</span>.history.pushState(params, <span class="string">''</span>, <span class="string">'#'</span>)</span><br><span class="line">&#125;</span><br><span class="line">hisPush()</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'popstate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'back btn click'</span>)</span><br><span class="line">  hisPush()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
       
 
       
@@ -278,7 +278,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://blog.guobaoyoo.com/2018/12/17/理解原型链/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://blog.guobaoyoo.com/2019/04/07/history/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -292,18 +292,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/22/常用linux命令总结/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          常用linux命令汇总
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/14/为什么我要写博客/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">为什么我要写博客</div>
+    <a href="/2019/04/03/cookie/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">cookie</div>
       <i class="icon-circle-right"></i>
     </a>
   

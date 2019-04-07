@@ -147,6 +147,160 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-history" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/07/history/">window.history</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/07/history/" class="archive-article-date">
+  	<time datetime="2019-04-07T04:04:35.324Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在工作中遇见一种需求，在用户点击回退按钮时为了挽留用户，会监听这个返回事件从而进行一些操作，就会用到history对象的pushState方法，在这里记录一下</p>
+<h3 id="window-history对象"><a href="#window-history对象" class="headerlink" title="window.history对象"></a>window.history对象</h3><blockquote>
+<p>Window.history是一个只读属性，用来获取History 对象的引用，History 对象提供了操作浏览器会话历史（浏览器地址栏中访问的页面，以及当前页面中通过框架加载的页面）的接口</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2019/04/07/history/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/07/history/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-cookie" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/03/cookie/">cookie</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/03/cookie/" class="archive-article-date">
+  	<time datetime="2019-04-03T05:36:20.618Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>平时在工作中经常用到对cookie进行操作的方法</p>
+<h3 id="getCookie"><a href="#getCookie" class="headerlink" title="getCookie"></a>getCookie</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span> (<span class="params">c</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> dc = <span class="built_in">document</span>.cookie</span><br><span class="line">  <span class="keyword">if</span> (dc.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> cs = dc.indexOf(c + <span class="string">'='</span>)</span><br><span class="line">    <span class="keyword">if</span> (cs !== <span class="number">-1</span>) &#123;</span><br><span class="line">      cs = cs + c.length + <span class="number">1</span></span><br><span class="line">      <span class="keyword">let</span> ce = dc.indexOf(<span class="string">';'</span>, cs)</span><br><span class="line">      <span class="keyword">if</span> (ce === <span class="number">-1</span>) &#123;</span><br><span class="line">        ce = dc.length</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">decodeURI</span>(dc.substring(cs, ce))</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="setCookie"><a href="#setCookie" class="headerlink" title="setCookie"></a>setCookie</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span> (<span class="params">c, v, e</span>) </span>&#123;  <span class="comment">// e为毫秒，改变setTime改变单位</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">  a.setTime(a.getTime() + e) </span><br><span class="line">  <span class="built_in">document</span>.cookie = c + <span class="string">'='</span> + <span class="built_in">escape</span>(v) + ((e == <span class="literal">null</span>) ? <span class="string">''</span> : <span class="string">';expires='</span> + a.toUTCString())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/03/cookie/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue中watch数组" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -767,158 +921,6 @@
 
 
   
-    <article id="post-理解原型链" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/17/理解原型链/">理解原型链</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/17/理解原型链/" class="archive-article-date">
-  	<time datetime="2018-12-17T09:38:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一段时间之后发现自己又忘了这个概念，估计是理解的不透彻，今天画下图，再记忆一下</p>
-        
-          <a class="article-more-a" href="/2018/12/17/理解原型链/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/17/理解原型链/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-为什么我要写博客" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/14/为什么我要写博客/">为什么我要写博客</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/14/为什么我要写博客/" class="archive-article-date">
-  	<time datetime="2018-12-14T11:38:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="其实一直都想"><a href="#其实一直都想" class="headerlink" title="其实一直都想"></a>其实一直都想</h5><p>14年大学毕业之后从事前端工作，打知道有博客这个东西之后就一直想要有自己的博客，但是拖拖拉拉竟然四年都过去了，其实之间也是有过一些尝试的，但不知道为什么都没有有个结果，直到前段时间和女朋友分手，就想着把以前好多想做的事情做一下，买了个人服务器，给闹闹搭建了宠物相册，备案了域名等，其实当时只是让自己忙起来忘记一些事情，当然现在还是这样。现在想做的事情也很多，包括想做宠物领养发布的小程序，闹闹的宠物相册接入node后端等等，慢慢来吧。</p>
-        
-          <a class="article-more-a" href="/2018/12/14/为什么我要写博客/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心情</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/14/为什么我要写博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1008,11 +1010,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">VSCode</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color2">VSCode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1024,11 +1026,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">mood</a>
+                <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">心情</a>
+                <a href="javascript:void(0)" class="js-tag color5">mood</a>
               </li>
              
               <li class="article-tag-list-item">
