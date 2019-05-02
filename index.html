@@ -147,6 +147,79 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue-config.js" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/02/vue-config.js/">vue.config.js 配置项</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/02/vue-config.js/" class="archive-article-date">
+  	<time datetime="2019-05-02T06:46:00.412Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> assetsDir = <span class="string">'static'</span></span><br><span class="line"><span class="keyword">const</span> resolve = <span class="function"><span class="params">dir</span> =&gt;</span> path.join(__dirname, dir)</span><br><span class="line"><span class="comment">// posix兼容方式处理路径</span></span><br><span class="line"><span class="keyword">const</span> posixJoin = <span class="function"><span class="params">_path</span> =&gt;</span> path.posix.join(assetsDir, _path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> lastVersion = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime()</span><br><span class="line"><span class="keyword">const</span> isProd = process.env.NODE_ENV === <span class="string">'production'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// cdn开关</span></span><br><span class="line"><span class="keyword">const</span> OPENCDN = <span class="literal">true</span></span><br><span class="line"><span class="keyword">const</span> webpackHtmlOptions = &#123;</span><br><span class="line">  <span class="comment">// dns预加载，优化接口请求</span></span><br><span class="line">  dnsPrefetch: [<span class="string">'https://fff.exmaple.com'</span>],</span><br><span class="line">  externals: &#123;</span><br><span class="line">    vue: <span class="string">'Vue'</span>,</span><br><span class="line">    <span class="string">'vue-router'</span>: <span class="string">'VueRouter'</span>,</span><br><span class="line">    vuex: <span class="string">'vuex'</span></span><br><span class="line">    vant: <span class="string">'vant'</span>,</span><br><span class="line">    fastClick: <span class="string">'FastClick'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  cdn: &#123;</span><br><span class="line">    <span class="comment">// 生产环境</span></span><br><span class="line">    build: &#123;</span><br><span class="line">      css: [<span class="string">'https://cdn.jsdelivr.net/npm/vant@1.5/lib/index.css'</span>],</span><br><span class="line">      js: [</span><br><span class="line">        <span class="string">'https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js'</span>,</span><br><span class="line">        <span class="string">'https://cdn.jsdelivr.net/npm/vue-router@3.0.1/dist/vue-router.min.js'</span>,</span><br><span class="line">        <span class="string">'https://unpkg.com/vuex@3.0.1/dist/vuex.min.js'</span>,</span><br><span class="line">        <span class="string">'https://cdn.jsdelivr.net/npm/vant@1.5/lib/vant.min.js'</span>,</span><br><span class="line">        <span class="string">'https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js'</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  publicPath: process.env.NODE_ENV === <span class="string">'production'</span> ? <span class="string">'/'</span> : <span class="string">'/'</span>,</span><br><span class="line">  outputDir: <span class="string">'dist'</span>,</span><br><span class="line">  lintOnSave: <span class="literal">true</span>,</span><br><span class="line">  transpileDependencies: [],</span><br><span class="line">  productionSourceMap: <span class="literal">false</span>,</span><br><span class="line">  chainWebpack: <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 删除懒加载模块的 prefetch preload，降低带宽压力</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    config.plugins.delete(<span class="string">'prefetch'</span>).delete(<span class="string">'preload'</span>)</span><br><span class="line">    config.resolve.alias</span><br><span class="line">      .set(<span class="string">'vue$'</span>, <span class="string">'vue/dist/vue.esm.js'</span>)</span><br><span class="line">      .set(<span class="string">'common'</span>, resolve(<span class="string">'src/common'</span>))</span><br><span class="line">      .set(<span class="string">'@'</span>, resolve(<span class="string">'src'</span>))</span><br><span class="line">    <span class="comment">// 清除警告</span></span><br><span class="line">    config.performance.set(<span class="string">'hints'</span>, <span class="literal">false</span>)</span><br><span class="line">    <span class="comment">// 将版本号写入环境变量</span></span><br><span class="line">    config.plugin(<span class="string">'define'</span>).tap(<span class="function"><span class="params">args</span> =&gt;</span> &#123;</span><br><span class="line">      args[<span class="number">0</span>][<span class="string">'app_build_version'</span>] = lastVersion</span><br><span class="line">      <span class="keyword">return</span> args</span><br><span class="line">    &#125;)</span><br><span class="line">    config.when(isProd, config =&gt;</span><br><span class="line">      <span class="comment">// 生产环境js增加版本号</span></span><br><span class="line">      config.output</span><br><span class="line">        .set(<span class="string">'filename'</span>, posixJoin(<span class="string">`js/<span class="subst">$&#123;lastVersion&#125;</span>-[name].[chunkhash].js`</span>))</span><br><span class="line">        .set(</span><br><span class="line">          <span class="string">'chunkFilename'</span>,</span><br><span class="line">          posixJoin(<span class="string">`js/<span class="subst">$&#123;lastVersion&#125;</span>-[id].[chunkhash].js`</span>)</span><br><span class="line">        )</span><br><span class="line">    )</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 添加CDN参数到htmlWebpackPlugin配置中， 修改 public/index.html</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    config.plugin(<span class="string">'html'</span>).tap(<span class="function"><span class="params">args</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 生产环境将cdn写入webpackHtmlOptions，在public/index.html应用</span></span><br><span class="line">      <span class="keyword">if</span> (isProd &amp;&amp; OPENCDN) &#123;</span><br><span class="line">        args[<span class="number">0</span>].cdn = webpackHtmlOptions.cdn.build</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// dns预加载</span></span><br><span class="line">      args[<span class="number">0</span>].dnsPrefetch = webpackHtmlOptions.dnsPrefetch</span><br><span class="line">      <span class="keyword">return</span> args</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  configureWebpack: <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">    config.resolve.extensions = [<span class="string">'.js'</span>, <span class="string">'.vue'</span>, <span class="string">'.json'</span>]</span><br><span class="line">    <span class="keyword">if</span> (isProd) &#123;</span><br><span class="line">      <span class="comment">// 开启cdn状态：externals不进入webpack打包</span></span><br><span class="line">      <span class="keyword">if</span> (OPENCDN) &#123;</span><br><span class="line">        config.externals = webpackHtmlOptions.externals</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  css: &#123;</span><br><span class="line">    extract: !isProd</span><br><span class="line">      ? <span class="literal">false</span></span><br><span class="line">      : &#123;</span><br><span class="line">        filename: posixJoin(<span class="string">`css/<span class="subst">$&#123;lastVersion&#125;</span>-[name].[contenthash:8].css`</span>),</span><br><span class="line">        chunkFilename: posixJoin(</span><br><span class="line">          <span class="string">`css/<span class="subst">$&#123;lastVersion&#125;</span>-[name].[contenthash:8].css`</span></span><br><span class="line">        )</span><br><span class="line">      &#125;,</span><br><span class="line">    sourceMap: <span class="literal">false</span>,</span><br><span class="line">    loaderOptions: &#123;</span><br><span class="line">      css: &#123;&#125;,</span><br><span class="line">      postcss: &#123;</span><br><span class="line">        plugins: [</span><br><span class="line">          <span class="built_in">require</span>(<span class="string">'autoprefixer'</span>)(&#123;</span><br><span class="line">            browsers: [</span><br><span class="line">              <span class="string">'last 10 Chrome versions'</span>,</span><br><span class="line">              <span class="string">'last 5 Firefox versions'</span>,</span><br><span class="line">              <span class="string">'Safari &gt;= 6'</span>,</span><br><span class="line">              <span class="string">'ie&gt; 8'</span></span><br><span class="line">            ]</span><br><span class="line">          &#125;),</span><br><span class="line">          <span class="built_in">require</span>(<span class="string">'postcss-px2rem'</span>)(&#123;</span><br><span class="line">            remUnit: <span class="number">37.5</span></span><br><span class="line">          &#125;)</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// modules: false</span></span><br><span class="line">  &#125;,</span><br><span class="line">  parallel: <span class="built_in">require</span>(<span class="string">'os'</span>).cpus().length &gt; <span class="number">1</span>,</span><br><span class="line">  pwa: &#123;&#125;,</span><br><span class="line">  devServer: &#123;</span><br><span class="line">    open: <span class="literal">true</span>, <span class="comment">// 配置自启浏览器</span></span><br><span class="line">    host: <span class="string">'0.0.0.0'</span>,</span><br><span class="line">    port: <span class="number">8088</span>,</span><br><span class="line">    https: <span class="literal">false</span>,</span><br><span class="line">    hot: <span class="literal">true</span>,</span><br><span class="line">    hotOnly: <span class="literal">true</span>,</span><br><span class="line">    disableHostCheck: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  pluginOptions: &#123;&#125;,</span><br><span class="line">  runtimeCompiler: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/02/vue-config.js/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-微信开发总结" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -852,82 +925,6 @@
 
 
   
-    <article id="post-意难平" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/31/意难平/">终是意难平</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/31/意难平/" class="archive-article-date">
-  	<time datetime="2018-12-31T14:01:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>有时候想很多事情，但是想写出来的时候似乎都卡在了指尖，犹犹豫豫，删删改改。18年马上就要过去了，大家都在忙着跨年，我虽然不知道所谓的跨年到底存在着怎样的意义，但是大家都在说，然后似乎就让它变成了一件很重要的事情，那就写点东西吧。</p>
-        
-          <a class="article-more-a" href="/2018/12/31/意难平/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">mood</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/31/意难平/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1092,7 +1089,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">一只前端&lt;br&gt;双子座&lt;br&gt;猫奴&lt;br&gt;喜欢打游戏，喜欢玩</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;p&gt;大家好&lt;/p&gt;&lt;p&gt;我是工作4年半的菜鸟前端飞锅锅&lt;/p&gt;&lt;p&gt;喜欢&lt;/p&gt;&lt;p&gt;唱 跳 rap 篮球&lt;/p&gt;&lt;img style=&#39;display:block; width:100px; height:100px;&#39; src=&#39;http://static.guobaoyoo.com/img/blog/timg.gif&#39;&gt;</div>
   	  	
     	</section>
     
