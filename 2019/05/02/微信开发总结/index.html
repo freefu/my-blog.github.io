@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://blog.guobaoyoo.com">
-  <title>linux环境安装nodejs | Undefined</title>
+  <title>微信开发前端总结 | Undefined</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="下载nodejs安装包并上传再官网选择正确的安装包下载https://nodejs.org/en/download/比如下载的包为 node-v10.14.0-linux-x64.tar.xz然后用scp命令上传到服务器1scp ./node-v10.14.0-linux-x64.tar.xz root@xx.xx.xxx.xx:/app/software">
-<meta name="keywords" content="javascript">
+  <meta name="description" content="好久没有更新，总之是变得懒惰了…趁着假期，把之前的项目总结一下，大概是微信h5开发的一些相关东西。 微信授权登录关于网页授权的两种scope的区别说明  以snsapi_base为scope发起的网页授权，是用来获取进入页面的用户的openid的，并且是静默授权并自动跳转到回调页的。用户感知的就是直接进入了回调页（往往是业务页面） 以snsapi_userinfo为scope发起的网页授权，是用来">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux环境安装nodejs">
-<meta property="og:url" content="https://blog.guobaoyoo.com/2018/11/28/linux环境安装nodejs/index.html">
+<meta property="og:title" content="微信开发前端总结">
+<meta property="og:url" content="https://blog.guobaoyoo.com/2019/05/02/微信开发总结/index.html">
 <meta property="og:site_name" content="Undefined">
-<meta property="og:description" content="下载nodejs安装包并上传再官网选择正确的安装包下载https://nodejs.org/en/download/比如下载的包为 node-v10.14.0-linux-x64.tar.xz然后用scp命令上传到服务器1scp ./node-v10.14.0-linux-x64.tar.xz root@xx.xx.xxx.xx:/app/software">
+<meta property="og:description" content="好久没有更新，总之是变得懒惰了…趁着假期，把之前的项目总结一下，大概是微信h5开发的一些相关东西。 微信授权登录关于网页授权的两种scope的区别说明  以snsapi_base为scope发起的网页授权，是用来获取进入页面的用户的openid的，并且是静默授权并自动跳转到回调页的。用户感知的就是直接进入了回调页（往往是业务页面） 以snsapi_userinfo为scope发起的网页授权，是用来">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-28T08:28:15.000Z">
+<meta property="og:updated_time" content="2019-05-02T06:36:45.261Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux环境安装nodejs">
-<meta name="twitter:description" content="下载nodejs安装包并上传再官网选择正确的安装包下载https://nodejs.org/en/download/比如下载的包为 node-v10.14.0-linux-x64.tar.xz然后用scp命令上传到服务器1scp ./node-v10.14.0-linux-x64.tar.xz root@xx.xx.xxx.xx:/app/software">
+<meta name="twitter:title" content="微信开发前端总结">
+<meta name="twitter:description" content="好久没有更新，总之是变得懒惰了…趁着假期，把之前的项目总结一下，大概是微信h5开发的一些相关东西。 微信授权登录关于网页授权的两种scope的区别说明  以snsapi_base为scope发起的网页授权，是用来获取进入页面的用户的openid的，并且是静默授权并自动跳转到回调页的。用户感知的就是直接进入了回调页（往往是业务页面） 以snsapi_userinfo为scope发起的网页授权，是用来">
   
     <link rel="alternative" href="/atom.xml" title="Undefined" type="application/atom+xml">
   
@@ -147,32 +147,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-linux环境安装nodejs" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-微信开发总结" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      linux环境安装nodejs
+      微信开发前端总结
     </h1>
   
 
         
-        <a href="/2018/11/28/linux环境安装nodejs/" class="archive-article-date">
-  	<time datetime="2018-11-28T07:08:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-28</time>
+        <a href="/2019/05/02/微信开发总结/" class="archive-article-date">
+  	<time datetime="2019-05-02T05:51:18.460Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="下载nodejs安装包并上传"><a href="#下载nodejs安装包并上传" class="headerlink" title="下载nodejs安装包并上传"></a>下载nodejs安装包并上传</h3><p>再官网选择正确的安装包下载<br><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a><br>比如下载的包为 node-v10.14.0-linux-x64.tar.xz<br>然后用scp命令上传到服务器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp ./node-v10.14.0-linux-x64.tar.xz root@xx.xx.xxx.xx:/app/software</span><br></pre></td></tr></table></figure></p>
+        <p>好久没有更新，总之是变得懒惰了…趁着假期，把之前的项目总结一下，大概是微信h5开发的一些相关东西。</p>
+<h4 id="微信授权登录"><a href="#微信授权登录" class="headerlink" title="微信授权登录"></a>微信授权登录</h4><p>关于网页授权的两种scope的区别说明</p>
+<ul>
+<li>以snsapi_base为scope发起的网页授权，是用来获取进入页面的用户的openid的，并且是静默授权并自动跳转到回调页的。用户感知的就是直接进入了回调页（往往是业务页面）</li>
+<li>以snsapi_userinfo为scope发起的网页授权，是用来获取用户的基本信息的。但这种授权需要用户手动同意，并且由于用户同意过，所以无须关注，就可在授权后获取该用户的基本信息。</li>
+<li>用户管理类接口中的“获取用户基本信息接口”，是在用户和公众号产生消息交互或关注后事件推送后，才能根据用户OpenID来获取用户基本信息。这个接口，包括其他微信接口，都是需要该用户（即openid）关注了公众号后，才能调用成功的。</li>
+</ul>
+<p>简单点说，在业务逻辑中，前端判断用户登录态为未登录或者前端请求后端接口，后端返回用户未登录时，前端跳转一个特定链接A到微信，然后微信重定向回特定的（以参数形式带在A上）前端页面，然后前端获取code，发送给后端登录后进而获取用户信息。</p>
 <a id="more"></a>
-<h3 id="解压安装包"><a href="#解压安装包" class="headerlink" title="解压安装包"></a>解压安装包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf node-v10.14.0-linux-x64.tar.xz</span><br><span class="line">tar -xvf node-v10.14.0-linux-x64 nodejs</span><br></pre></td></tr></table></figure>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /app/software/nodejs/bin/npm /usr/local/bin/ </span><br><span class="line">ln -s /app/software/nodejs/bin/node /usr/local/bin/</span><br></pre></td></tr></table></figure>
-<h3 id="检测"><a href="#检测" class="headerlink" title="检测"></a>检测</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<h3 id="升级node版本"><a href="#升级node版本" class="headerlink" title="升级node版本"></a>升级node版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">npm install -g n</span><br><span class="line"></span><br><span class="line">// 安装node最新版本：</span><br><span class="line">n latest</span><br><span class="line"></span><br><span class="line">// 安装稳定版</span><br><span class="line">n stable</span><br><span class="line"></span><br><span class="line">// 查看已安装版本</span><br><span class="line">n</span><br><span class="line"></span><br><span class="line">// 删除指定版本</span><br><span class="line">n rm 0.10.1</span><br><span class="line"></span><br><span class="line">// 指定某个版本运行脚本</span><br><span class="line">n use 0.10.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 授权</span></span><br><span class="line"><span class="keyword">import</span> &#123; getUserInfo2, getCode &#125; <span class="keyword">from</span> <span class="string">'@/api/index'</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">'@/router'</span></span><br><span class="line"><span class="keyword">import</span> &#123; Toast &#125; <span class="keyword">from</span> <span class="string">'vant'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> authorize = <span class="function"><span class="params">store</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> code = router.history.current.query.__state</span><br><span class="line">  <span class="keyword">if</span> (code !== <span class="string">''</span> &amp;&amp; code !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="comment">// 授权成功</span></span><br><span class="line">    <span class="comment">// 获取用户信息并且保存用户信息</span></span><br><span class="line">    getUserInfo2(code).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      store.commit(<span class="string">'SET_USER'</span>, res.data)</span><br><span class="line">      store.commit(<span class="string">'SET_LOGIN'</span>, <span class="literal">true</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (code === <span class="string">''</span>) &#123;</span><br><span class="line">    <span class="comment">// 授权失败</span></span><br><span class="line">    Toast(&#123; <span class="attr">message</span>: <span class="string">'授权失败，请刷新重试'</span>, <span class="attr">duration</span>: <span class="number">1500</span> &#125;)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> url = location.href.indexOf(<span class="string">'?'</span>) &gt; <span class="number">-1</span> ? location.href + <span class="string">'&amp;__state=suc'</span> : location.href + <span class="string">'?__state=suc'</span></span><br><span class="line">    <span class="comment">// 这里是通过后端去跳转的，避免暴露appid等信息，又能及时保存登录态，其实放在前端去跳转也可以，但是需要有个单独的授权页面去处理这些逻辑</span></span><br><span class="line">    getUrl(&#123; <span class="attr">url</span>: url &#125;)</span><br><span class="line">      .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">window</span>.location.href = res.data</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Error</span>(err))</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="微信支付"><a href="#微信支付" class="headerlink" title="微信支付"></a>微信支付</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  onBridgeReady (obj, orderid) &#123;</span><br><span class="line">    <span class="keyword">let</span> _self = <span class="keyword">this</span></span><br><span class="line">    <span class="built_in">window</span>.WeixinJSBridge.invoke(</span><br><span class="line">      <span class="string">'getBrandWCPayRequest'</span>, &#123;</span><br><span class="line">        <span class="string">'appId'</span>: obj.appId, <span class="comment">// 公众号名称，由商户传入</span></span><br><span class="line">        <span class="string">'timeStamp'</span>: obj.timeStamp, <span class="comment">// 时间戳，自1970年以来的秒数</span></span><br><span class="line">        <span class="string">'nonceStr'</span>: obj.nonceStr, <span class="comment">// 随机串</span></span><br><span class="line">        <span class="string">'package'</span>: obj.package,</span><br><span class="line">        <span class="string">'signType'</span>: obj.signType, <span class="comment">// 微信签名方式：</span></span><br><span class="line">        <span class="string">'paySign'</span>: obj.paySign <span class="comment">// 微信签名</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (res.err_msg === <span class="string">'get_brand_wcpay_request:ok'</span>) &#123;</span><br><span class="line">          <span class="comment">// 支付成功</span></span><br><span class="line">          <span class="comment">// todo</span></span><br><span class="line">          &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Error</span>(err))</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          Toast(&#123; <span class="attr">message</span>: <span class="string">'支付失败'</span>, <span class="attr">duration</span>: <span class="number">1500</span> &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    )</span><br><span class="line">  &#125;,</span><br><span class="line">  pay () &#123;</span><br><span class="line">    wechatPay().then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// let o = res.orderNo 订单id</span></span><br><span class="line">      <span class="comment">// let p = JSON.parse(res.params) 需要携带参数，涉及具体业务逻辑</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> WeixinJSBridge === <span class="string">'undefined'</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">document</span>.addEventListener) &#123;</span><br><span class="line">          <span class="built_in">document</span>.addEventListener(<span class="string">'WeixinJSBridgeReady'</span>, <span class="keyword">this</span>.onBridgeReady, <span class="literal">false</span>)</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.attachEvent) &#123;</span><br><span class="line">          <span class="built_in">document</span>.attachEvent(<span class="string">'WeixinJSBridgeReady'</span>, <span class="keyword">this</span>.onBridgeReady)</span><br><span class="line">          <span class="built_in">document</span>.attachEvent(<span class="string">'onWeixinJSBridgeReady'</span>, <span class="keyword">this</span>.onBridgeReady)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// 唤起支付</span></span><br><span class="line">        <span class="keyword">this</span>.onBridgeReady(p, o)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Error</span>(err))</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="微信分享"><a href="#微信分享" class="headerlink" title="微信分享"></a>微信分享</h4><p>微信分享需要引入微信js-sdk，建议cdn引入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// todo</span></span><br></pre></td></tr></table></figure></p>
+
       
 
       
@@ -216,7 +223,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
@@ -272,7 +279,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://blog.guobaoyoo.com/2018/11/28/linux环境安装nodejs/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://blog.guobaoyoo.com/2019/05/02/微信开发总结/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -286,18 +293,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/11/29/js判断页面滑到底部/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          js判断页面滑到底部
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/11/26/audio/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">有关audio的一些事</div>
+    <a href="/2019/04/07/history/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">window.history</div>
       <i class="icon-circle-right"></i>
     </a>
   
