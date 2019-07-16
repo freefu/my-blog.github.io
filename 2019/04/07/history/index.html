@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Undefined">
 <meta property="og:description" content="在工作中遇见一种需求，在用户点击回退按钮时为了挽留用户，会监听这个返回事件从而进行一些操作，就会用到history对象的pushState方法，在这里记录一下 window.history对象 Window.history是一个只读属性，用来获取History 对象的引用，History 对象提供了操作浏览器会话历史（浏览器地址栏中访问的页面，以及当前页面中通过框架加载的页面）的接口">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-07T04:31:48.628Z">
+<meta property="og:updated_time" content="2019-07-16T09:47:53.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="window.history">
 <meta name="twitter:description" content="在工作中遇见一种需求，在用户点击回退按钮时为了挽留用户，会监听这个返回事件从而进行一些操作，就会用到history对象的pushState方法，在这里记录一下 window.history对象 Window.history是一个只读属性，用来获取History 对象的引用，History 对象提供了操作浏览器会话历史（浏览器地址栏中访问的页面，以及当前页面中通过框架加载的页面）的接口">
@@ -178,7 +178,7 @@
 <h3 id="popstate事件"><a href="#popstate事件" class="headerlink" title="popstate事件"></a>popstate事件</h3><blockquote>
 <p>每当活动的历史记录项发生变化时， popstate 事件都会被传递给window对象。如果当前活动的历史记录项是被 pushState 创建的，或者是由 replaceState 改变的，那么 popstate 事件的状态属性 state 会包含一个当前历史记录状态对象的拷贝。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'popstate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'back btn click'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<h3 id="用户点击回退按钮对之进行”挽留”"><a href="#用户点击回退按钮对之进行”挽留”" class="headerlink" title="用户点击回退按钮对之进行”挽留”"></a>用户点击回退按钮对之进行”挽留”</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hisPush</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> params = &#123;</span><br><span class="line">    key: <span class="built_in">Date</span>.now()</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">window</span>.history.pushState(params, <span class="string">''</span>, <span class="string">'#'</span>)</span><br><span class="line">&#125;</span><br><span class="line">hisPush()</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'popstate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'back btn click'</span>)</span><br><span class="line">  hisPush()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="用户点击回退按钮对之进行”挽留”"><a href="#用户点击回退按钮对之进行”挽留”" class="headerlink" title="用户点击回退按钮对之进行”挽留”"></a>用户点击回退按钮对之进行”挽留”</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> hisPush = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> params = &#123;</span><br><span class="line">    key: <span class="built_in">Date</span>.now()</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">window</span>.history.pushState(params, <span class="string">''</span>, <span class="string">'#'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> popstateEvent = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'back btn click'</span>)</span><br><span class="line">&#125;</span><br><span class="line">hisPush()</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'popstate'</span>, popstateEvent)</span><br><span class="line"><span class="comment">// 记得在单页中销毁绑定的回退事件</span></span><br><span class="line"><span class="built_in">window</span>.removeEventListener(<span class="string">'popstate'</span>, popstateEvent)</span><br></pre></td></tr></table></figure>
       
 
       
@@ -421,11 +421,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">VSCode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -434,14 +438,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">mood</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
